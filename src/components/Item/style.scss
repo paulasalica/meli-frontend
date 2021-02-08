@@ -1,0 +1,32 @@
+.item {
+    background-color: #FFF;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .item_img  {
+        height: 180px;
+        margin: 16px;
+
+        img {
+            width: 180px;
+            height: 180px;
+            border-radius: 4px;
+        }
+    }
+
+    .item_info {
+        width: 70%;
+
+        .price {
+            margin-bottom: 32px;
+            
+            font-size: 24px;
+        }
+        .title{
+            margin:0px;
+            font-size: 18px;
+        }
+        
+    }
+}

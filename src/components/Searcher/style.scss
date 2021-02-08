@@ -1,0 +1,42 @@
+header {
+    background-color: #FFE600;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .searcher {
+        width: 80%;
+        display: flex;
+
+        img {
+            width: 50px;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            border: none;
+            align-items: center;
+            height: 38px;
+        }
+
+        input[type="text"]:active {
+            border: none;
+        }
+
+        input[type="text"]::placeholder {
+            font-size: 18px;
+            padding-left: 10px;
+        }
+
+        input[type="button"] {
+            background: #EEEEEE url('./ic_search.png') no-repeat center;
+            background-size: 18px;
+            width: 35px;
+            height: 38px;
+            border: none;
+            padding-top: 7px;
+        }
+    }
+}
