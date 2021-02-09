@@ -12,7 +12,7 @@ export const Item = ({item}) => {
     return (
         <Link to='item' onClick={handleClick}>
         <div className="item">
-            {!click ? (
+            {(!click) ? (
                 <div className="item_container">
                     <div className="item_img">
                         <img src={picture} />
@@ -31,8 +31,6 @@ export const Item = ({item}) => {
             ) : (
                 <ItemDetail />
             )}
-            
-
         </div>
         </Link>
 

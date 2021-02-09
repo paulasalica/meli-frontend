@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {Link, Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import { getAllProducts}  from '../../services/product';
 import { Searcher } from '../Searcher/Searcher';
 import ItemList from '../ItemList/ItemList';
@@ -9,6 +9,8 @@ import './style.scss';
 const Home = () => {
     const [searchResults, setSearchResults] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [itemDetails, setitemDetails] = useState(false);
+
     var searchValue;
     const handleOnSubmit = async (value) => {
         searchValue = value;
@@ -25,12 +27,18 @@ const Home = () => {
     };
 
     return (
-        <div className="App">
+        <Router>
             <Searcher handleOnSubmit={handleOnSubmit} loading={loading} searchValue={searchValue}/>
-            <div>
-                <ItemList items={searchResults}/> 
-            </div>
-        </div>
+            <Switch>
+                <Route>
+                    <ItemList items={searchResults}/> 
+                </Route>
+
+                <Route>
+                    <ItemDetail /> 
+                </Route>
+            </Switch>
+        </Router>
         
     )
 };
