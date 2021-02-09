@@ -25,14 +25,17 @@ const Home = () => {
             setLoading(false);
         }
     };
- 
+    
     const selectItem = async (value) => {
+        setLoading(true);
         try {
             const producDetails = await getProductDetails(value);
             setitemIdDetails(producDetails.data.item);
         } catch (error) {
             return
-        } 
+        } finally {
+            setLoading(false);
+        }
     } ;
 
     return (
@@ -40,12 +43,21 @@ const Home = () => {
             <Searcher handleOnSubmit={handleOnSubmit} loading={loading}/>
             <Filter filters={filters}/>
             <Switch>
-                <Route path="/" exact>
-                    <ItemList items={searchResults} selectItem={selectItem}/> 
-                </Route>
-                <Route path="/item/:id">
-                    <ItemDetail item={itemIdDetails}/>
-                </Route>
+                {
+                    loading ? <h3>Loading...</h3> : (
+                        <Route path="/" exact>
+                            <ItemList items={searchResults} selectItem={selectItem}/> 
+                        </Route>
+                    )
+                }
+                {
+                    loading ? <h3>Loading...</h3> : (
+                        <Route path="/item/:id">
+                            <ItemDetail item={itemIdDetails}/>
+                        </Route>
+                    )
+                }
+                
             </Switch>
         </Router>
     )

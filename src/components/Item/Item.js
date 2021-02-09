@@ -3,18 +3,18 @@ import {Link} from 'react-router-dom';
 
 export const Item = ({
     item,
-    selectItem
+    handleOnClick
 }) => {
     const {id, title, price, picture, free_shipping, city_name} = item;
     
-    const handleOnClick = () => {
-        selectItem(id);
-    }
+    // const handleOnClick = () => {
+    //     selectItem(id);
+    // }
 
     return (
         <div className="item">
                 <div className="item_container">
-                    <Link to={`/item/${id}`} onClick={handleOnClick}>
+                    <Link to={`/item/${id}`} onClick={()=>handleOnClick(id)}>
                         <div className="item_img">
                             <img src={picture} />
                         </div>

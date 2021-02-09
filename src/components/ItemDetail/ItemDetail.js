@@ -1,8 +1,7 @@
 import './style.scss';
 
 const ItemDetail = ({item}) => {
-    const {condition, sold_quantity, title, description, picture, amount} = item;
-    console.log(item.price);
+    const {condition, sold_quantity, title, description, picture, price} = item;
     return (
         <div className="item_detail">
             <div className="item_info">
@@ -12,7 +11,7 @@ const ItemDetail = ({item}) => {
                 <div className="lateral_info">
                     <p className="condition_soldquantity">{condition} - {sold_quantity} vendidos</p>
                     <p className="title_item">{title}</p>
-                    <p className="price">$ {amount}</p>
+                    <p className="price">$ {price.amount}</p>
                     <button>Comprar</button>
                 </div>
             </div>
