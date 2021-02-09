@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { getAllProducts, getProductDetails } from '../../services/product';
 import Searcher from '../Searcher/Searcher';
@@ -25,7 +25,7 @@ const Home = () => {
             setLoading(false);
         }
     };
-    
+
     const selectItem = async (value) => {
         setLoading(true);
         try {
@@ -52,12 +52,11 @@ const Home = () => {
                 }
                 {
                     loading ? <h3>Loading...</h3> : (
-                        <Route path="/item/:id">
+                        <Route path="/items/:id" exact>
                             <ItemDetail item={itemIdDetails}/>
                         </Route>
                     )
                 }
-                
             </Switch>
         </Router>
     )

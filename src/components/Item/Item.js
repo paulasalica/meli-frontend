@@ -7,10 +7,6 @@ export const Item = ({
 }) => {
     const {id, title, price, picture, free_shipping, city_name} = item;
     
-    // const handleOnClick = () => {
-    //     selectItem(id);
-    // }
-
     return (
         <div className="item">
                 <div className="item_container">
