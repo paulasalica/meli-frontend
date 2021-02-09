@@ -1,0 +1,72 @@
+$color-white: #FFF;
+.item_detail {
+    background-color: $color-white ;
+    width: 80%;
+    margin: 16px auto 100px;
+    display: flex;
+    flex-direction: column;
+
+    .item_info {
+        display: flex;
+        width: 95%;
+        margin: 0 auto;
+
+        .item_picture {
+            width: 70%;
+            padding: 20px;
+
+            img {
+                display: block;
+                margin: 0px auto;
+            }
+        }
+
+        .lateral_info {
+            width: 40%;
+
+            .condition_soldquantity{
+                margin: 32px 0px 16px;
+                font-size: 14px;
+            }
+
+            .condition_soldquantity::first-letter {
+                text-transform: uppercase;
+            }
+
+            .title_item {
+                margin: 0px;
+                font-size: 24px;
+                font-weight: 600;
+            }
+
+            .price {
+                margin: 32px 0px;
+                font-size: 46px;
+            }
+
+            button {
+                background-color: #3482FA;
+                width: 215px;
+                height: 34px;
+                border: none;
+                border-radius: 3px;
+                color: $color-white;
+            }
+        }
+    }
+
+    .item_description {
+        width: 60%;
+        margin-top: 100px;
+
+        .title {
+            font-size: 28px;
+            margin: 32px;
+        }
+
+        .description{
+            margin: 0px 0px 32px 32px ;
+            color: #666666;
+        }
+    }
+}

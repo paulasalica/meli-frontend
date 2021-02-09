@@ -1,37 +1,37 @@
 import './style.scss';
-import { useState } from 'react';
 import {Link} from 'react-router-dom';
-import ItemDetail from '../ItemDetail/ItemDetail';
 
-export const Item = ({item}) => {
-    const {id, title, price, picture, free_shipping} = item;
-    const [click, setclick] = useState(false);
-
-    const handleClick = () => setclick(!click);
+export const Item = ({
+    item,
+    selectItem
+}) => {
+    const {id, title, price, picture, free_shipping, city_name} = item;
+    
+    const handleOnClick = () => {
+        selectItem(id);
+    }
 
     return (
-        <Link to={`/item/${id}`} onClick={handleClick}>
         <div className="item">
-            
                 <div className="item_container">
-                    <div className="item_img">
-                        <img src={picture} />
-                    </div>
+                    <Link to={`/item/${id}`} onClick={handleOnClick}>
+                        <div className="item_img">
+                            <img src={picture} />
+                        </div>
+                    </Link>
                     <div className="item_info">
                         <div className="price_container">
                             <p className="price">$ {price.mount}</p>
-                            {free_shipping==true ? (
+                            {free_shipping ? (
                                 <input className="free_shipping_logo" />
-                            ) : console.log()}
+                            ) : ''}
                         </div>
                         <p className="title">{title}</p>
-                        <p className=""></p>
+                    </div>
+                    <div className="city">
+                        <p className="city_name">{city_name}</p>
                     </div>
                 </div>
-            
-        </div>
-        </Link>
-
-        
+        </div>   
     )
 }

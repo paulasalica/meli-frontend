@@ -1,7 +1,7 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import './style.scss';
 
-export const Searcher = ({
+const Searcher = ({
     handleOnSubmit,
     loading,
 }) => {
@@ -24,3 +24,5 @@ export const Searcher = ({
         </header>
     )
 }
+
+export default Searcher;
