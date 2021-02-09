@@ -11,5 +11,6 @@ export const getAllProducts = async (searchKey) => {
 }
 
 export const getProductDetails = async (itemId) => {
+  console.log(`${API_ENDPOINT}/${itemId}`)
   return httpClient.get(`${API_ENDPOINT}/${itemId}`);
 }

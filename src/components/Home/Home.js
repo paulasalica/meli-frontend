@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { getAllProducts, getProductDetails } from '../../services/product';
 import Searcher from '../Searcher/Searcher';
@@ -25,16 +25,14 @@ const Home = () => {
             setLoading(false);
         }
     };
-
+ 
     const selectItem = async (value) => {
         try {
             const producDetails = await getProductDetails(value);
             setitemIdDetails(producDetails.data.item);
         } catch (error) {
             return
-        } finally {
-            setLoading(false);
-        }
+        } 
     } ;
 
     return (
