@@ -1,15 +1,15 @@
 import React from 'react';
-import {Router, Route, Switch } from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import './App.css';
 import Home from './components/Home/Home';
 
 function App() {
   return (
-    <Router>
-      <Route path="/" exact>
-        <Home />
-      </Route>
-    </Router>
+      <Router>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+      </Router>
   );
 }
 
