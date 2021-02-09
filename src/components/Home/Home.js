@@ -30,12 +30,10 @@ const Home = () => {
         <Router>
             <Searcher handleOnSubmit={handleOnSubmit} loading={loading} searchValue={searchValue}/>
             <Switch>
-                <Route>
-                    <ItemList items={searchResults}/> 
+                <Route path="/" exact>
+                    <ItemList items={searchResults} searchValue={searchValue}/> 
                 </Route>
-
-                <Route>
-                    <ItemDetail /> 
+                <Route path="/item/:id" component={ItemDetail}>
                 </Route>
             </Switch>
         </Router>
