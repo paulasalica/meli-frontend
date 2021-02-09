@@ -1,32 +1,55 @@
-.item {
+.item{
     background-color: #FFF;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
 
-    .item_img  {
-        height: 180px;
-        margin: 16px;
+    .item_container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        border-bottom: #EEEEEE;
 
-        img {
-            width: 180px;
+        .item_img  {
             height: 180px;
-            border-radius: 4px;
+            margin: 16px;
+
+            img {
+                width: 180px;
+                height: 180px;
+                border-radius: 4px;
+            }
         }
-    }
 
-    .item_info {
-        width: 70%;
+        .item_info {
+            width: 70%;
 
-        .price {
-            margin-bottom: 32px;
+            .price_container {
+                display: flex;
+                
+                .price {
+                    margin-bottom: 32px;
+                    font-size: 24px;
+                    margin-right: 10px;
+                }
+                .free_shipping_logo{
+                    background: url('./ic_shipping.png') no-repeat center;
+                    width: 15px;
+                    border: none;
+                }
+            }
             
-            font-size: 24px;
+            .title{
+                margin:0px;
+                font-size: 18px;
+            }       
         }
-        .title{
-            margin:0px;
-            font-size: 18px;
-        }
-        
     }
+
+}
+
+.item::after {
+    display: block;
+    background-color: #EEEEEE;
+    height: 2px;
+    width: 98%;
+    content: " ";
+    margin: 0px auto;
 }

@@ -1,25 +1,15 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import {Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import { Home } from './components/Home/Home';
+import Home from './components/Home/Home';
 
 function App() {
   return (
-    <Switch>
-      <Route exact path="/">
+    <Router>
+      <Route path="/" exact>
         <Home />
       </Route>
-        
-        {/* <Route path="/">
-          <Searcher />
-        </Route>
-        <Route path="/ItemList">
-          <ItemList />
-        </Route>
-        <Route path="/items/:id">
-          <ItemList />
-        </Route> */}
-    </Switch>
+    </Router>
   );
 }
 

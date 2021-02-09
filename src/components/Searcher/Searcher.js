@@ -17,7 +17,7 @@ export const Searcher = ({
     return (
         <header>
             <div className="searcher">
-                <img src="./logo_ml.png" />
+                <input className="logo" />
                 <input type="text" placeholder="Nunca dejes de buscar" value={searchKey} onChange={handleOnChange}/>
                 <input type="button" onClick={handleOnClick} /> 
             </div>

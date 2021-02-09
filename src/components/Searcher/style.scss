@@ -14,11 +14,20 @@ header {
             width: 50px;
         }
 
+       .logo {
+            background: url("./logo_ml.png") no-repeat center;
+            border: none;
+            width: 50px;
+            margin-right: 20px;
+        }
+
         input[type="text"] {
-            width: 80%;
+            width: 93%;
             border: none;
             align-items: center;
             height: 38px;
+            border-bottom-left-radius: 3px;
+            border-top-left-radius: 3px;
         }
 
         input[type="text"]:active {
@@ -37,6 +46,8 @@ header {
             height: 38px;
             border: none;
             padding-top: 7px;
+            border-bottom-right-radius: 3px;
+            border-top-right-radius: 3px;
         }
     }
 }

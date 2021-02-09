@@ -1,7 +1,7 @@
 import { Item } from '../Item/Item';
 import './style.scss';
 
-export const ItemList = ({items}) => {
+const ItemList = ({items}) => {
     return (
     <div className="items">
         {items.map( (item) => { 
@@ -10,3 +10,5 @@ export const ItemList = ({items}) => {
     </div>
     )
 }
+
+export default ItemList;

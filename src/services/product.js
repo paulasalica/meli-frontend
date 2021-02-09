@@ -1,6 +1,7 @@
 import httpClient from 'axios';
 
 const API_ENDPOINT = 'https://test-meli-backend.herokuapp.com/api/items';
+const API_ENDPOINT_LOCAL = 'http://localhost:5000/api/items';
 
 export const getAllProducts = async (searchKey) => {
     // return new Promise((resolve, reject) => {
@@ -11,7 +12,7 @@ export const getAllProducts = async (searchKey) => {
     //     })
     // })
 
-    return httpClient.get(`${API_ENDPOINT}`, {
+    return httpClient.get(`${API_ENDPOINT_LOCAL}`, {
         params: {
           q: searchKey,
         }
