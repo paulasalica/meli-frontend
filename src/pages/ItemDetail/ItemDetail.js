@@ -1,10 +1,10 @@
 import './style.scss';
 import { useState, useEffect } from 'react';
 import { useLocation  } from "react-router-dom";
-import Searcher from '../../components/Searcher/Searcher';
-import Filter from '../../components/Filter/Filter';
 import { getAllProducts, getProductDetails } from "../../services/product";
 import {CircularProgress} from '@material-ui/core';
+import Searcher from '../../components/Searcher/Searcher';
+import Filter from '../../components/Filter/Filter';
 
 const ItemDetail = ({}) => {
     const [searchResults, setSearchResults] = useState([]);
@@ -13,7 +13,8 @@ const ItemDetail = ({}) => {
 
     const {condition, sold_quantity, title, description, picture, price } = searchResults;
     let id = useLocation().pathname.split('/')[2];
-    
+    let search = '';
+
     useEffect(() => {
         async function fetchData() {
             try {
@@ -31,16 +32,20 @@ const ItemDetail = ({}) => {
             }
         } ;
         fetchData();
-    }, []);
+    }, [search]);
+
+    const handleOnSubmit = async (value) => {
+        search = value;
+    };
 
     return (
         <div>
-            <Searcher /> 
+            <Searcher handleOnSubmit={handleOnSubmit}/> 
+            <Filter filters={filters}/>
         {
             loading ? <div><CircularProgress size={25} color="secondary"/></div> 
             : (
                 <div className="item_detail">
-                    <Filter filters={filters}/>
                     <div className="item_info">
                         <div className="item_picture">
                             <img src={picture}/>

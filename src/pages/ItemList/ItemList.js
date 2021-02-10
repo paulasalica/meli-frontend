@@ -8,14 +8,10 @@ import Item from '../../components/Item/Item';
 import './style.scss';
 
 const ItemList = () => {
-    console.log(useLocation())
-    console.log('ItemList: Item + Searcher + Filters');
-    let search = useLocation().search.split('=')[1];
-    console.log(search)
-
     const [searchResults, setSearchResults] = useState([]);
     const [loading, setLoading] = useState(false);
     const [filters, setFilters] = useState([]);
+    let search = useLocation().search.split('=')[1];
 
     useEffect(() => {
         async function fetchData() {
@@ -31,11 +27,15 @@ const ItemList = () => {
             }
         };
         fetchData();
-    }, []);
+    }, [search]);
+
+    const handleOnSubmit = async (value) => {
+        search = value;
+    };
 
     return (
         <div>
-            <Searcher />
+            <Searcher handleOnSubmit={handleOnSubmit} />
             <Filter filters={filters}/>
             <div className="item-list">
                 {

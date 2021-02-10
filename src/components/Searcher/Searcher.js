@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import ItemDetail from '../../pages/ItemDetail/ItemDetail';
 import './style.scss';
 
 const Searcher = ({
