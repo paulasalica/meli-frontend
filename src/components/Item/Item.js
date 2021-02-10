@@ -6,7 +6,7 @@ export const Item = ({
     handleOnClick
 }) => {
     const {id, title, price, picture, free_shipping, city_name} = item;
-    
+
     return (
         <div className="item">
                 <div className="item_container">

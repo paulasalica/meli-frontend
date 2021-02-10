@@ -44,19 +44,20 @@ const Home = () => {
             <Filter filters={filters}/>
             <Switch>
                 {
-                    loading ? <h3>Loading...</h3> : (
+                    loading ? <h1>Loading...</h1> : (
                         <Route path="/" exact>
                             <ItemList items={searchResults} selectItem={selectItem}/> 
                         </Route>
                     )
                 }
                 {
-                    loading ? <h3>Loading...</h3> : (
-                        <Route path="/items/:id" exact>
+                    loading ? <h1>Loading...</h1> : (
+                        <Route path="/item/:id" exact>
                             <ItemDetail item={itemIdDetails}/>
                         </Route>
                     )
                 }
+                
             </Switch>
         </Router>
     )
