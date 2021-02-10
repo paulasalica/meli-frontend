@@ -1,9 +1,9 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './style.scss';
 
 const Searcher = ({
-    handleOnSubmit,
-    loading,
+    handleOnSubmit
 }) => {
     const [searchKey, setSearchKey] = useState();
 
@@ -19,7 +19,9 @@ const Searcher = ({
             <div className="searcher">
                 <input className="logo" />
                 <input type="text" placeholder="Nunca dejes de buscar" value={searchKey} onChange={handleOnChange}/>
-                <input type="button" onClick={handleOnClick} /> 
+                
+                    <input type="button" onClick={handleOnClick} /> 
+                
             </div>
         </header>
     )

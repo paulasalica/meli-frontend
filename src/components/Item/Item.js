@@ -1,16 +1,13 @@
 import './style.scss';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-export const Item = ({
-    item,
-    handleOnClick
-}) => {
+export const Item = ({ item }) => {
     const {id, title, price, picture, free_shipping, city_name} = item;
 
     return (
         <div className="item">
                 <div className="item_container">
-                    <Link to={`/item/${id}`} onClick={()=>handleOnClick(id)}>
+                    <Link to={`/items/${id}`} >
                         <div className="item_img">
                             <img src={picture} />
                         </div>

@@ -1,18 +1,23 @@
+import { useParams } from 'react-router-dom';
 import { Item } from '../Item/Item';
 import './style.scss';
 
 const ItemList = ({
     items,
-    selectItem
+    loading
 }) => {
-    const handleOnClick = (id) => {
-        selectItem(id);
-    }
+    console.log(useParams())
+    console.log('itemlist');
+
     return (
     <div className="items">
-        {items.map( (item) => { 
-            return <Item key={item.id} item={item} handleOnClick={handleOnClick}/>
-        })}
+        {
+            loading ? <h2>Loading...</h2> : (
+                items.map( (item) => { 
+                    return <Item key={item.id} item={item} />
+                })
+            )
+       }
     </div>
     )
 }

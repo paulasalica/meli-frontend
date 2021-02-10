@@ -1,6 +1,6 @@
 import './style.scss';
 import { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, useLocation  } from "react-router-dom";
 import { getProductDetails } from "../../services/product";
 
 const ItemDetail = ({}) => {
@@ -8,7 +8,9 @@ const ItemDetail = ({}) => {
     const [loading, setLoading] = useState(true);
 
     const {condition, sold_quantity, title, description, picture, price } = searchResults;
-    let { id } = useParams();
+    let id = useLocation().pathname.split('/')[2];
+    console.log('details')
+    console.log(id)
     
     useEffect(() => {
         async function fetchData() {
@@ -28,7 +30,7 @@ const ItemDetail = ({}) => {
     return (
         <div>
         {
-            loading ? <h1>Loading...</h1> : (
+            loading ? <h1>Loading... detail</h1> : (
                 <div className="item_detail">
                     <div className="item_info">
                         <div className="item_picture">
