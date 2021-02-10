@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ItemDetail from '../../pages/ItemDetail/ItemDetail';
 import './style.scss';
 
 const Searcher = ({
@@ -19,9 +20,9 @@ const Searcher = ({
             <div className="searcher">
                 <input className="logo" />
                 <input type="text" placeholder="Nunca dejes de buscar" value={searchKey} onChange={handleOnChange}/>
-                
+                <Link to={`/items?search=${searchKey}`}>
                     <input type="button" onClick={handleOnClick} /> 
-                
+                </Link>
             </div>
         </header>
     )

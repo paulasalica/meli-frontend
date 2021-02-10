@@ -1,16 +1,18 @@
 import './style.scss';
 import { useState, useEffect } from 'react';
-import { useParams, useLocation  } from "react-router-dom";
-import { getProductDetails } from "../../services/product";
+import { useLocation  } from "react-router-dom";
+import Searcher from '../../components/Searcher/Searcher';
+import Filter from '../../components/Filter/Filter';
+import { getAllProducts, getProductDetails } from "../../services/product";
+import {CircularProgress} from '@material-ui/core';
 
 const ItemDetail = ({}) => {
     const [searchResults, setSearchResults] = useState([]);
+    const [filters, setFilters] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const {condition, sold_quantity, title, description, picture, price } = searchResults;
     let id = useLocation().pathname.split('/')[2];
-    console.log('details')
-    console.log(id)
     
     useEffect(() => {
         async function fetchData() {
@@ -18,6 +20,10 @@ const ItemDetail = ({}) => {
                 setLoading(true);
                 const producDetails = await getProductDetails(id);
                 setSearchResults(producDetails.data.item);
+
+                const title = producDetails.data.item.title;
+                const products = await getAllProducts(title.split(' ')[0]);
+                setFilters(products.data.filters);
             } catch (error) {
                 return
             } finally {
@@ -29,9 +35,12 @@ const ItemDetail = ({}) => {
 
     return (
         <div>
+            <Searcher /> 
         {
-            loading ? <h1>Loading... detail</h1> : (
+            loading ? <div><CircularProgress size={25} color="secondary"/></div> 
+            : (
                 <div className="item_detail">
+                    <Filter filters={filters}/>
                     <div className="item_info">
                         <div className="item_picture">
                             <img src={picture}/>

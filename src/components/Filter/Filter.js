@@ -1,6 +1,6 @@
 import './style.scss';
 
-const Filter = ({filters}) => {
+const Filter = ({filters, loading}) => {
     const string = filters.map((filter) => `${filter.name} >`).toString();
     const text = string.replaceAll('>,', '> ');
     const rowFilters = text.slice(0, text.length-1);

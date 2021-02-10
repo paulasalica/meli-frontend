@@ -1,7 +1,7 @@
 import './style.scss';
 import { Link } from 'react-router-dom';
 
-export const Item = ({ item }) => {
+const Item = ({ item }) => {
     const {id, title, price, picture, free_shipping, city_name} = item;
 
     return (
@@ -28,3 +28,5 @@ export const Item = ({ item }) => {
         </div>   
     )
 }
+
+export default Item;
