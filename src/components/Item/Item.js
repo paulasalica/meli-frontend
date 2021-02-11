@@ -18,7 +18,6 @@ const Item = ({ item }) => {
                                 <p className="amount">$ {price.amount}</p>
                                 <p className="decimals">{price.decimals}</p>
                             </div>
-                            {/* <p className="price">$ {price.mount}</p> */}
                             {free_shipping ? (
                                 <input className="free_shipping_logo" />
                             ) : ''}
