@@ -39,7 +39,7 @@ const ItemList = () => {
             <Filter filters={filters}/>
             <div className="item-list">
                 {
-                    loading ? <div><CircularProgress size={25} color="secondary"/></div> 
+                    loading ? <div className="loading"><CircularProgress size={25} color="primary"/></div> 
                     : (
                         searchResults.map( (item) => { 
                             return <Item key={item.id} item={item} />

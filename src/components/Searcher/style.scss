@@ -34,7 +34,8 @@ header {
             border: none;
         }
 
-        input[type="text"]::placeholder {
+        input[type="text"]::placeholder,
+        input[type="text"]:read-write {
             font-size: 18px;
             padding-left: 10px;
         }

@@ -1,4 +1,7 @@
 $color-white: #FFF;
+$color-blue:  #3482FA;
+$color-grey:  #666666;
+
 .item_detail {
     background-color: $color-white ;
     width: 80%;
@@ -45,7 +48,7 @@ $color-white: #FFF;
             }
 
             button {
-                background-color: #3482FA;
+                background-color: $color-blue;
                 width: 215px;
                 height: 34px;
                 border: none;
@@ -69,4 +72,8 @@ $color-white: #FFF;
             color: #666666;
         }
     }
+}
+
+.loading {
+    text-align: center;
 }
