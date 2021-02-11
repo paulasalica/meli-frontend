@@ -20,15 +20,25 @@
         .item_info {
             width: 60%;
             text-decoration: none;
+
             .price_container {
                 display: flex;
-                
                 .price {
-                    text-decoration: none;
-                    margin-bottom: 32px;
-                    font-size: 24px;
+                    display: flex;
                     margin-right: 10px;
+
+                    .amount {
+                        text-decoration: none;
+                        margin-bottom: 32px;
+                        font-size: 24px;                       
+                    }
+    
+                    .decimals {
+                        margin: 28px 0 0 1px;
+                        font-size: 13px;
+                    }
                 }
+            
                 .free_shipping_logo{
                     background: url('./ic_shipping.png') no-repeat center;
                     width: 15px;

@@ -43,8 +43,17 @@ $color-grey:  #666666;
             }
 
             .price {
-                margin: 32px 0px;
-                font-size: 46px;
+                display: flex;
+
+                .amount {
+                    margin: 32px 0px;
+                    font-size: 46px;
+                }
+
+                .decimals {
+                    margin-top: 42px;
+                    font-size: 20px;
+                }
             }
 
             button {

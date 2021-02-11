@@ -21,7 +21,6 @@ const ItemDetail = ({}) => {
                 setLoading(true);
                 const producDetails = await getProductDetails(id);
                 setSearchResults(producDetails.data.item);
-
                 const title = producDetails.data.item.title;
                 const products = await getAllProducts(title.split(' ')[0]);
                 setFilters(products.data.filters);
@@ -53,7 +52,10 @@ const ItemDetail = ({}) => {
                         <div className="lateral_info">
                             <p className="condition_soldquantity">{condition} - {sold_quantity} vendidos</p>
                             <p className="title_item">{title}</p>
-                            <p className="price">$ {price.amount} </p>
+                            <div className="price">
+                                <p className="amount">$ {price.amount}</p>
+                                <p className="decimals">{price.decimals}</p>
+                            </div>
                             <button>Comprar</button>
                         </div>
                     </div>
