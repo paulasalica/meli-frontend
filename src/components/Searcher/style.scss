@@ -28,12 +28,12 @@ header {
             height: 38px;
             border-bottom-left-radius: 3px;
             border-top-left-radius: 3px;
-        }
 
-        input[type="text"]:active {
-            border: none;
+            &:focus,
+            &:active {
+                border: none;
+            }
         }
-
         input[type="text"]::placeholder,
         input[type="text"]:read-write {
             font-size: 18px;
